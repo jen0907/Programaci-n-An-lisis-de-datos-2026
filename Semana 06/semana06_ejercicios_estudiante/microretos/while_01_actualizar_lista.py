@@ -13,6 +13,7 @@ while indice < len(puntajes):
     # TODO: actualice el puntaje de esta posición dividiéndolo entre 100.
     print("selección por indice: ", puntajes[indice])
     puntajes[indice] = puntajes[indice] / 100
+    #print(puntajes)
     indice += 1
 
 print("Puntajes normalizados:", puntajes)
