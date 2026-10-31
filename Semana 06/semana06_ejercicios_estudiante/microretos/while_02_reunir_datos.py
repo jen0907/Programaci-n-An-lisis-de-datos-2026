@@ -13,7 +13,7 @@ entrada = input("Resultado (o fin para terminar): ").strip().lower()
 while entrada != "fin":
     resultado = int(entrada)
     # TODO: agregue el resultado a la lista.
-    resultados.append(resultado)
+    pass
 
     entrada = input("Resultado (o fin para terminar): ").strip().lower()
 
