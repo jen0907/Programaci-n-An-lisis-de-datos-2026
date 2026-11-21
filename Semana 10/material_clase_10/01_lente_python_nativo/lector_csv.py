@@ -15,10 +15,12 @@ def cargar_atenciones(ruta_csv=ARCHIVO_CSV):
         with open(ruta_csv, mode="r", encoding="utf-8-sig", newline="") as archivo:
             lector = csv.DictReader(archivo)
 
-            for fila in lector:
+            for index in lector:
                 # TODO 1A: convierta edad y minutos_espera a números enteros.
+                index["edad"] = int(index["edad"])
+                index["minutos_espera"] = int(index["minutos_espera"])
                 # TODO 1B: agregue cada fila a la lista atenciones.
-                pass
+                atenciones.append(index)
 
     except FileNotFoundError:
         print(f"No se encontró el archivo de datos: {ruta_csv}")
