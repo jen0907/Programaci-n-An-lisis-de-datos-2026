@@ -11,15 +11,23 @@ cálculo se hace (el promedio de una columna se llama mean). El 2 lo escribe ust
 Ejecute desde la carpeta material_estudiante:  python 1_filtros_pandas/nivel_4_calcular.py
 """
 import pandas as pd
+from pathlib import Path
+ARCHIVO_CSV = Path(__file__).with_name("notas.csv")
+# 1. Lea el archivo notas.csv y guárdelo en la variable notas
+notas = pd.read_csv(ARCHIVO_CSV)
 
-notas = pd.read_csv("notas.csv")
 
 # 1. Promedio de la columna examen (complete los dos huecos)
-promedio_examen = notas[____].____()
+promedio_examen = notas['examen'].mean()
+
 
 # 2. Ahora usted solo: promedio de la columna tarea
-promedio_tarea = 0      # reemplace el 0 por su código
+promedio_tarea = notas['tarea'].mean() 
+
+nota_alta = notas ['proyecto'].max()
+# reemplace el 0 por su código
 
 # 3. Mire los resultados (estas líneas ya están listas)
 print("Examen:", round(promedio_examen, 2))
 print("Tarea:", round(promedio_tarea, 2))
+print("Nota alta: " , notas['proyecto'])

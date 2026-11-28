@@ -12,11 +12,16 @@ notas[...] va otra lista: se ven DOS pares de corchetes, notas[["a", "b"]].
 Ejecute desde la carpeta material_estudiante:  python 1_filtros_pandas/nivel_3_varias_columnas.py
 """
 import pandas as pd
+from pathlib import Path
 
-notas = pd.read_csv("notas.csv")
+ARCHIVO_CSV = Path(__file__).with_name("notas.csv")
+notas = pd.read_csv(ARCHIVO_CSV)
 
-# 1. Seleccione las columnas "nombre" y "examen" y guárdelas en la variable resultado
-resultado = notas[____]
+
+# 1. Seleccione las columnas "nombre" y "examen" y "proyecto" guárdelas en la variable resultado
+filtro = ['nombre' , 'examen', 'proyecto']
+resultado = notas[filtro]
 
 # 2. Mire el resultado (esta línea ya está lista)
-print(resultado.head(3))
+print(resultado)
+print("Tipo: ", type(filtro).__name__)
